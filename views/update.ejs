@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update Status</title>
+    </head>
+    <body>
+        <h1>Update Application Status</h1>
+        <form action="/update/<%=" method="put">
+            <input  type="text" name="idno" placeholder="id number"> 
+        </br>
+            <select name="applicationType">
+                <option disabled selected value> -- select an option -- </option>
+                <option value="custodian">custodian</option>
+                <option value="bonafide">bonafide</option>
+                <option value="busspass">busspass</option>
+                <option value="scholarship">scholarship</option>
+
+              </select>
+            </br>
+            <select name="status">
+                <option value="inprogress">inprogress</option>
+                <option value="pending">pending</option>
+                <option value="completed">completed</option>
+              </select>
+
+            </br>
+            <button>Submit!</button>
+            <button>edit</button>
+            </form>
+
+          </br>
+          
+          
+                 
+
+
+         
+
+
+            
+            
+   </body>
+</html>

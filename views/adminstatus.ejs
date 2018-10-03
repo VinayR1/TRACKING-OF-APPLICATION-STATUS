@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Status</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+        <style type="text/css">
+        .style
+          {
+            margin-top:30px;
+            margin-left:470px;
+            margin-right:460px;
+            box-shadow:0px 0px 5px #7C7C7C;
+            padding-top:3px;
+            padding-left:50px;
+            padding-right:50px;
+            height:270px;
+            border-radius:8px;
+          }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="style">
+        <form action="/admin/status" method="post" class="form-inline">
+           
+
+          <h4 align="center" style="color:#278199"><b>APPLICATION STATUS</b></h4>
+        </br>
+          
+          
+        
+        
+        
+
+            <label>ROLLNO&nbsp*&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type="text" name="idnum" placeholder="id number" class="form-control" required style="width:150px">
+          </br></br>
+            <label>APP TYPE&nbsp*&nbsp&nbsp&nbsp&nbsp</label>
+            <select name="applicationType" class="form-control" required style="width:150px">
+              <option disabled selected value> -- select an option -- </option>
+                <option value="custodian">custodian</option>
+                <option value="bonafide">bonafide</option>
+                <option value="busspass">busspass</option>
+                <option value="scholarship">scholarship</option>
+              </select> 
+        </br>
+        </br>
+        <label>Date&nbsp*&nbsp</label>
+    <input class="inputspace" id="date" name="Date" type="date" required class="form-control" style="border-radius:4px;width:150px;height:30px;margin-left:50px;">
+        </br>
+        </br>
+      
+        <div class="text-center" style="padding-left:14px">
+            <button class="btn btn-primary btn-md" style="width:50%;background-color:#278199">Check status</button>
+          </div>
+            </form>
+
+
+    </div>
+    </br>
+        
+      
+    
+          <div style="background-color:white;background-color:white;color:black;height:220px;padding-top:10px;margin-right:300px;margin-left:300px;padding-left:230px;border-radius:5px">
+
+                    
+          <% if(typeof students !='undefined' && students !=null ){ %>
+
+          <% console.log(students); %>
+            <!--<h5> <%= students._id %> </h5>-->
+            <p style="color:#278199"><b>&nbsp&nbsp&nbsp&nbsp<u>DETAILS ABOUT APPLICATION</u></b></p>
+          </br>
+          
+                 
+                 <p><b>ROLLNO:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= students.hallticket %></p>
+                <p><b>STATUS:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= students.status %></p>
+                 <p><b>TYPE OF APP:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= students.applicationType %></p>
+                 <p><b>DATE:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= students.Date %></p>
+                  <p><b>REMARKS:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= students.remarks %></p>
+                </div>
+                </br>
+                   <div align="center" style="color:black">
+                <a href="/admin/edit/<%= students._id %>"><font color="#278199">edit details</font></a>
+              </div> 
+                  
+             <% } %> 
+
+
+             
+ </br>
+
+
+   <div align="center" style="color:#2E2F30">  
+<a href="/admin"><font color="#278199">goto homepage</font></a>
+</div>
+
+           
+            
+   </body>
+</html>

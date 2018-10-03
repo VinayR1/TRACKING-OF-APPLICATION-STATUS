@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Edit</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+        <style type="text/css">
+        	.style
+        	{
+        		margin-top:100px;
+        		margin-left:400px;
+        		margin-right:400px;
+        		box-shadow:0px 0px 5px #7C7C7C;
+        		padding-top:5px;
+        		padding-left:50px;
+        		padding-right:10px;
+        		border-radius:10px;
+        		padding-bottom:15px;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="style">
+            <% if(typeof students !='undefined' && students !=null){ %>
+        <h4 align="center" style="color:#278199;padding-right:30px"><b>EDIT STATUS</b></h4>
+    </br>
+
+        <% console.log(students.status);%>
+                
+
+        <form name="form" action="/admin/update/<%= students._id %>?_method=PUT" method="post" class="form-inline">
+            <% console.log(students.hallticket); %>
+            <label>ROLLNO&nbsp*</label>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="student[idno]" value="<%= students.hallticket %>" class="form-control" placeholder="id number" style="width:70%"> 
+        </br>
+    </br>
+        <label>APP TYPE&nbsp*</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <select name="student[applicationType]" class="form-control" style="width:70%">
+                  <option disabled selected value> -- select an option -- </option>
+
+              <% if(students.applicationType=="custodian") {%>
+                 <option value="custodian" selected>custodian</option>
+              <% } else {%>
+                 <option value="custodian">custodian</option>
+              <% } %>
+
+                <% if(students.applicationType=="bonafide") {%>
+                 <option value="bonafide" selected>bonafide</option>
+              <% } else {%>
+                 <option value="bonafide">bonafide</option>
+              <% } %>
+
+              <% if(students.applicationType=="buspass") {%>
+                 <option value="busspass" selected>busspass</option>
+              <% } else {%>
+                 <option value="busspass">busspass</option>
+              <% } %>
+
+              <% if(students.applicationType=="scholarship") {%>
+                 <option value="scholarship" selected>scholarship</option>
+              <% } else {%>
+                 <option value="scholarship">scholarship</option>
+              <% } %>
+
+
+                 
+                
+              </select>
+            </br>
+        </br>
+            <label>STATUS&nbsp*</label>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <select name="student[status]" class="form-control" style="width:70%" required="applicationType">
+
+              <% if(students.status=="inprogress") {%>
+                 <option value="inprogress" selected >inprogress </option>
+              <% } else {%>
+                 <option value="inprogress" >inprogress </option>
+              <% } %>
+
+              <% if(students.status=="pending") {%>
+                 <option value="pending" selected >pending </option>
+              <% } else {%>
+                 <option value="pending" >pending </option>
+              <% } %>
+
+              <% if(students.status=="completed") {%>
+                 <option value="completed" selected >completed </option>
+              <% } else {%>
+                 <option value="completed" >completed </option>
+              <% } %>
+             
+             
+
+              </select>
+          </br>
+      </br>
+              <label>REMARKS&nbsp*</label>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <input  type="textarea" name="student[remarks]" value="<%= students.remarks %>" class="form-control" placeholder="remarks" style="width:70%">  
+
+            </br>
+        </br>
+    </br>
+           
+         
+          
+
+           <button class="btn btn-primary" style="margin-left:100px;width:50%;background-color:#278199">Update status</button>
+           
+           
+            </form>
+
+          </br>
+
+
+         
+
+
+            
+          <% } %> 
+
+
+          <a href="/admin" style="margin-left:40%;color:#278199">home page</a> 
+      </br>
+  </br>
+          <a href="/admin/status" style="padding-left:130px;color:#278199">click here to check status</a>
+      </div>
+
+   </body>
+</html>

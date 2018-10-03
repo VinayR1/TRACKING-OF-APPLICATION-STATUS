@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+        <style type="text/css">
+         
+            
+            
+            .style
+            {
+              margin-left:380px;
+              margin-right:380px;
+              box-shadow:0px 0px 5px #7C7C7C;
+              padding-top:10px;
+              padding-right:10px;
+              padding-left:20px;
+              margin-top:100px;
+              height:460px;
+              border-radius:10px;
+
+            }
+            
+        </style>
+    </head>
+    <body >
+          
+          <div align="center" class="style" >
+        <h4 style="color:#278199"><b>ADD STUDENT DETAILS</font></b></h4>
+      
+      
+     
+
+        <form action="/add" method="post" class="form-inline">
+          
+
+          <div  align="center" > 
+          </br>
+
+            
+            <div class="form-group">
+            <label>&nbsp&nbsp&nbspROLLNO&nbsp*</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input  type="text" name="idno" placeholder="id number" class="form-control" required style="width:300px">
+          </div>
+          
+        </br></br>
+      
+         
+
+       <label>&nbsp&nbspREMARKS</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input  type="textarea" name="remarks" placeholder="add remarks(optional)" class="form-control" style="width:300px">
+     </br>
+   </br>
+
+            <label>&nbspAPP TYPE&nbsp*</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select name="applicationType" class="form-control" style="width:300px">
+                 <option disabled selected value> -- select an option -- </option>
+                <option value="custodian">custodian</option>
+                <option value="bonafide">bonafide</option>
+                <option value="busspass">busspass</option>
+                <option value="scholarship">scholarship</option>
+              </select>
+            </br>
+            </br>
+            
+            <div class="form group">
+            <label>STATUS&nbsp*</label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select name="status" class="form-control" style="width:300px" required>
+                 <option disabled selected value> -- select an option -- </option>
+                <option value="inprogress">inprogress</option>
+                <option value="pending">pending</option>
+                <option value="completed">completed</option>
+              </select>
+            </div>
+          </br>
+        
+
+    <label>&nbspDATE:&nbsp*</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="inputspace" id="date" name="Date" type="date" style="width:300px;height:30px;border-radius:2px;border-top-color:white;border-bottom-color:white" required>
+
+              
+            </br>
+          </br>
+        </br>
+            <button class="btn btn-primary btn-md" style="background-color:#278199;width:35%">UPLOAD</button>
+
+            </form>
+
+
+          </br>
+
+
+          </br>
+
+
+<a href="/admin/status" style="color:#278199"> check status and update status</a> 
+         
+
+   </div>
+ </div>
+</div>
+</table>
+            
+            
+   </body>
+</html>

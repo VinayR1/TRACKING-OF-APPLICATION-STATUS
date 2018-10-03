@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Status</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+        <style type="text/css">
+          .style1
+          {
+            
+            
+            margin-left:480px;
+            margin-right:480px;
+            margin-top:65px;
+            box-shadow:0px 0px 5px grey;
+            padding-left:20px;
+            padding-top:8px;
+            padding-bottom:10px;
+            border-radius:8px;
+
+          }
+          .style
+          {
+             height:98px;
+             
+             background-color:#278199;
+             border-bottom-right-radius:5px;
+             
+
+          
+          }
+          .style2
+          {
+            margin-left:300px;
+            margin-right:300px;
+            padding-left:250px;
+            padding-top:7px;
+          }
+        </style>
+    </head>
+    <body>
+      <div class="style">
+
+        <img src="logo.jpg" style="width:8%;padding-left:1px">
+        
+        
+        <font style="padding-left:260px;font-size:23px;color:#F1F1F3"><b>BHARAT INSTITUTE OF ENGINEERING AND TECHNOLOGY</b></font>
+        
+       
+        <div align="center" style="background-color:#F3F3F5;box-shadow:0px 0px 5px grey;padding-bottom:2px">
+          <font style="color:#278199"><b>APPLICATION STATUS MANAGEMENT</b></font>
+        </div>
+        
+        
+      </div>
+       
+
+      <div class="style1">
+        <p align="center"><font style="color:#278199"><b><u>CHECK YOUR STATUS</u></b></font></p>
+       </br>
+        <form action="/status" method="post" class="form-inline">
+          <label>ROLLNO&nbsp*</label>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input  type="text" name="idnum" placeholder="id number" required class="form-control" style="width:65%">
+          </br>
+        </br>
+            <label>APP TYPE&nbsp*</label>
+            &nbsp&nbsp&nbsp<select name="applicationType" required class="form-control" style="width:65%">
+              <option disabled selected value> -- select an option -- </option>
+                <option value="custodian">custodian</option>
+                <option value="bonafide">bonafide</option>
+                <option value="busspass">busspass</option>
+                <option value="scholarship">scholarship</option>
+              </select> 
+        </br>
+      </br>
+        <label>Date&nbsp*</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <input class="inputspace" id="date" name="Date" type="date" required style="width:65%;border-radius:5px;height:33px">
+
+        </br>
+      </br>
+
+            <a href="/status/studentstatus"><button class="btn btn-primary btn-sm" style="background-color:#2489A4;margin-left:100px;width:120px">Check status</button></a>
+            </form>
+          </div>
+          </br>
+
+           <div class="style2">
+           <% if(typeof students !='undefined' && students !=null ){ %>
+
+ <% console.log(students); %>
+
+
+                 <h5 style="padding-left:20px;color:#278199;font-size:17px"><b><u>APPLICATION DETAILS</u></b></h5>
+               </br>
+                 <p><b>ROLLNO:</b><font style="padding-left:35px"><%= students.hallticket %></font></p>
+                <p><b>STATUS:</b><font style="padding-left:40px"><%= students.status %></font></p>
+                 <p><b>APP TYPE:</b><font style="padding-left:25px"><%= students.applicationType %></font></p>
+                 <p><b>REMARKS:</b><font style="padding-left:25px"><%= students.remarks %></font></p>
+          
+
+             <% } %> 
+
+         
+</div>
+
+            
+            
+   </body>
+</html>
